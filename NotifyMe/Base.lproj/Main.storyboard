@@ -1,24 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--View ControllerA-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewControllerA" customModule="NotifyMe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dude, wake me up is she is coming to the class! Okay?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xhr-Eb-r9Q">
+                                <rect key="frame" x="87" y="293.5" width="200" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="LWh-4c-Jdr"/>
+                                    <constraint firstAttribute="height" constant="100" id="u3C-ac-mla"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LSV-3M-sLL">
+                                <rect key="frame" x="106" y="472" width="163" height="30"/>
+                                <state key="normal" title="Go To View Controller B"/>
+                                <connections>
+                                    <action selector="goToViewControllerBAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="k3g-XR-8Qh"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Xhr-Eb-r9Q" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Ajh-e8-SR8"/>
+                            <constraint firstItem="Xhr-Eb-r9Q" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="cJt-nb-9A2"/>
+                            <constraint firstItem="LSV-3M-sLL" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="udQ-gf-xxG"/>
+                            <constraint firstItem="LSV-3M-sLL" firstAttribute="top" secondItem="Xhr-Eb-r9Q" secondAttribute="bottom" constant="78.5" id="zV7-kd-hrV"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="notificationLabel" destination="Xhr-Eb-r9Q" id="tG9-74-KaC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="156" y="-14.842578710644679"/>
+        </scene>
+        <!--View ControllerB-->
+        <scene sceneID="OXY-zl-bu0">
+            <objects>
+                <viewController storyboardIdentifier="ViewControllerB" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ixn-BE-vj5" customClass="ViewControllerB" customModule="NotifyMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NtO-R9-SMK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="riH-3n-Jhk">
+                                <rect key="frame" x="87" y="293.5" width="200" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="ED3-9f-U6X"/>
+                                    <constraint firstAttribute="height" constant="100" id="GrT-yg-Xou"/>
+                                </constraints>
+                                <state key="normal" title="Notify View Controller A"/>
+                                <connections>
+                                    <action selector="notifyViewControllerAAction:" destination="Ixn-BE-vj5" eventType="touchUpInside" id="Ohz-aF-a0A"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="riH-3n-Jhk" firstAttribute="centerY" secondItem="7gj-kx-bKu" secondAttribute="centerY" id="Uki-2e-Y7b"/>
+                            <constraint firstItem="riH-3n-Jhk" firstAttribute="centerX" secondItem="7gj-kx-bKu" secondAttribute="centerX" id="XZo-KR-jQ0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="7gj-kx-bKu"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q9p-Nq-Ues" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1001" y="-15"/>
         </scene>
     </scenes>
 </document>
